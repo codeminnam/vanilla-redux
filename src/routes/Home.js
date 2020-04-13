@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-import { actionCreators } from "../store";
+import { add, remove } from "../store";
 import ToDo from "../components/ToDo";
 
 function Home({toDos, addToDo, deleteToDo}){
@@ -34,8 +34,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        addToDo: (text) => dispatch(actionCreators.addToDo(text)),
-        deleteToDo: id => dispatch(actionCreators.deleteToDo(id))
+        addToDo: (text) => dispatch(add(text)),
+        deleteToDo: id => dispatch(remove(id))
 
     };
 }
